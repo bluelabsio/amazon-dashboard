@@ -11,7 +11,7 @@ from sqlalchemy import create_engine, text
 
 
 redshift_user = 'tbruks'
-redshift_pass = getpass.getpass()
+redshift_pass = 'UZoh>choreeb8aegae4R'
 redshift_host = "central.c30hiwrajgjj.us-east-1.redshift.amazonaws.com"
 redshift_port = 5439
 dbname = 'analytics'
@@ -146,13 +146,13 @@ external_stylesheets = [
 app = Dash(__name__, external_stylesheets=external_stylesheets)
 app.title = "Amazon Dashboard"
 
-app.layout = html.Div(
+app.layout = html.Div([
     html.H2("Response Rate By Stratification Variable"),
     html.Div(children=response_fig),
     html.Br(),
     html.H2("Match Rate By Stratification Variable"),
     html.Div(children=match_fig)
-)
+])
 
 if __name__ == '__main__':
     app.run_server(debug=True)
